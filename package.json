@@ -1,0 +1,15 @@
+{
+  "name": "algorithms",
+  "version": "0.0.1",
+  "description": "algorithms implementation",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sebastian Milos",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.0.2"
+  }
+}
