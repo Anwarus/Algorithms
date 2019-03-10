@@ -31,3 +31,14 @@ describe('test linearSearch', function test() {
         result.should.equal(5);
     });
 });
+
+describe('test binarySearch', function test() {
+    it('should return 3 when value is on 3th index', function testCase() {
+        const value = 10;
+        const array = [1, 4, 6, 10, 15];
+
+        const result = algorithm.binarySearch(value, array);
+
+        result.should.equal(3);
+    });
+});
