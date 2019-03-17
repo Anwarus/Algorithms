@@ -1,7 +1,6 @@
 const algorithm = {
     linearSearch: function linearSearch(value, array) {
         for (let i = 0; i < array.length; i += 1) if (array[i] === value) return i;
-
         return -1;
     },
     binarySearch: function binarySearch(value, array) {
@@ -36,23 +35,39 @@ const algorithm = {
         return -1;
     },
     bubbleSort: function bubbleSort(array) {
-        const clonedArray = array.slice(0);
+        const clone = array.slice(0);
         let swapped = true;
 
         while (swapped) {
             swapped = false;
 
-            for (let i = 0; i < clonedArray.length - 1; i += 1) {
-                if (clonedArray[i] > clonedArray[i + 1]) {
-                    const tmp = clonedArray[i];
-                    clonedArray[i] = clonedArray[i + 1];
-                    clonedArray[i + 1] = tmp;
+            for (let i = 0; i < clone.length - 1; i += 1) {
+                if (clone[i] > clone[i + 1]) {
+                    const tmp = clone[i];
+                    clone[i] = clone[i + 1];
+                    clone[i + 1] = tmp;
                     swapped = true;
                 }
             }
         }
 
-        return clonedArray;
+        return clone;
+    },
+    insertionSort: function insertionSort(array) {
+        const clone = array.slice(0);
+
+        for (let i = 1; i < clone.length; i += 1) {
+            for (let j = i - 1; j >= 0; j -= 1) {
+                if (clone[j + 1] > clone[j]) break;
+                else {
+                    const tmp = clone[j + 1];
+                    clone[j + 1] = clone[j];
+                    clone[j] = tmp;
+                }
+            }
+        }
+
+        return clone;
     }
 };
 
