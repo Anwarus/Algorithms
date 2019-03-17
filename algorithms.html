@@ -44,7 +44,16 @@
         </div>
 
         <div class="slide">
-            <h1>What algorithm is?</h1>
+            <h1>A word about this site</h1>
+            <p>
+                This site consist of thoughts I gathered from different places during my journey
+                with learning algorithms and data structures. I don't want to create redundant
+                resources but only try to add something new that somebody may find helpful.
+            </p>
+        </div>
+
+        <div class="slide">
+            <h1>What algorithm is</h1>
             <p>
                 Algorithm is a recipe, a recipe to success, to achieve a predetermined goal. It says
                 us exactly what to do to acomplish task. We got a step by step instruction and our
@@ -57,11 +66,92 @@
             </p>
             <pre>
                 <code class="javascript">
-                    /*
-                    Problem: bake the cake
-                    Goal: finished cake
-                    Algorithm: recipe for this cake
-                    */
+    /*
+     * Problem: bake the cake
+     * Goal: finished cake
+     * Algorithm: recipe for this cake
+     */
+
+    // To be honest don't name recipe as algorithm 
+    // unlike you want to catch few strange glances. :)
+                </code>
+            </pre>
+        </div>
+
+        <div class="slide">
+            <h1>Time for data structures</h1>
+            <p>
+                Considering data structure we can think of it like a container for raw data. Data
+                structure gives us precise guidelines about method for storing given data. Another
+                interesting fact is that data structures can be nested.
+            </p>
+            <pre>
+                <code class="javascript">
+    // Raw data: Jack, Jupyter, Sydney
+
+    // Data structure (custom object):
+
+    const foo = {
+        name: 'Jack',
+        surename: 'Jupyter',
+        city: 'Sydney'
+    }
+                </code>
+            </pre>
+            <p>
+                But what if we have hundreds of objects like this, how to store them. Use just
+                another data structure to keep them all.
+            </p>
+            <pre>
+                <code class="javascript">
+    // Data: many of foo's
+
+    // Data structure (array):
+
+    const baz = [
+        {
+            name: 'Jack',
+            surename: 'Jupyter',
+            city: 'Sydney'
+        },
+        {
+            name: 'Nick',
+            surename: 'Seek',
+            city: 'London'
+        },
+        {
+            name: 'Ellie',
+            surename: 'Night',
+            city: 'Paris'
+        }
+    ]
+                </code>
+            </pre>
+        </div>
+
+        <div class="slide">
+            <h1>Defining complexity</h1>
+            <p></p>
+        </div>
+
+        <div class="slide">
+            <h1>Linear search</h1>
+            <pre>
+                <code class="javascript">
+    function linearSearch(value, array) {
+        for (let i = 0; i < array.length; i += 1) 
+            if (array[i] === value) return i;
+
+        return -1;
+    }
+                </code>
+            </pre>
+
+            <pre>
+                <code class="javascript">
+    /* 
+     * f(n) = n + 1 => O(n)
+     */
                 </code>
             </pre>
         </div>
