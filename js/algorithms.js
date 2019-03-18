@@ -68,6 +68,21 @@ const algorithm = {
         }
 
         return clone;
+    },
+    selectionSort: function selectionSort(array) {
+        const clone = array.slice(0);
+
+        for (let i = 0; i < clone.length - 1; i += 1) {
+            for (let j = i + 1; j < clone.length; j += 1) {
+                if (clone[j] < clone[i]) {
+                    const tmp = clone[j];
+                    clone[j] = clone[i];
+                    clone[i] = tmp;
+                }
+            }
+        }
+
+        return clone;
     }
 };
 
