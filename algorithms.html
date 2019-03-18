@@ -131,7 +131,77 @@
 
         <div class="slide">
             <h1>Defining complexity</h1>
-            <p></p>
+            <p>
+                Computional complexity is universal way to measure performance of algorithms. It
+                allows to focus on real efficiency independent of computer speed. Instead of
+                focusing on measuring time it takes given task to finish we considering sum of
+                operations it need to execute to finish.
+            </p>
+            <p>
+                For example let's take a look on algorithm which will calculate sum of elements in
+                array:
+            </p>
+            <pre>
+                <code class="javascript">
+    function sum(array) {
+        let sum = 0;
+        for (let number of array) {
+            sum += number;
+        }
+        return sum;
+    }
+                </code>
+            </pre>
+            <p>
+                So as we can see every time we will call this function first line <code>let sum = 0;</code>
+                will execute once. Same story regarding last line <code>return sum;</code>. They independly on
+                input always execute once. Thing goal different inside <code>for loop</code>. Amount of
+                executing of <code>sum += number;</code> depends on array length, it's not constant. Having
+                this information we can come up with function (this time from math) describing
+                complexity of given algorithm.
+            </p>
+            <p>
+                <center><strong>f(n) = n + 2</strong></center>
+            </p>
+            <p>
+                This method let us to precisely designate complexity of algorithm but most of the
+                time we are interested only in estimation. There are 3 types of estimation
+                notations:
+            </p>
+            <p>
+                <ul>
+                    <li>O notation - mostly used</li>
+                    <li>Ω (omega) notation</li>
+                    <li>Θ (theta) notation</li>
+                </ul> 
+            </p>
+            <p>
+                The <strong>O notation</strong> imply that there exist function 
+                <strong><span class="red">g(n)</span></strong> 
+                for with result multipled by some constant <strong>c</strong> will be equal or higher to function
+                <strong><span class="blue">f(n)</span></strong>. 
+                This property is fulfilled for every <strong>n</strong> higher than <strong>n<sub>0</sub></strong>.
+            </p>
+            <img src="img/graph.svg" />
+            <p>
+                Above graph shows two function blue one is our 
+                <strong><span class="blue">f(n) = n<sup>3</sup> - n + 0.2</span></strong>
+                and red one is 
+                <strong><span class="red">g(n) = n<sup>3</sup></span></strong>.
+                As we can see there is a point where these two function intersects, it's <strong>n<sub>0</sub></strong> point. 
+                After this point 
+                <strong><span class="red">g(n)</span></strong> 
+                is always higher than 
+                <strong><span class="blue">f(n)</span></strong>. 
+                This type of estimation is <strong>O notation</strong>.
+            </p>
+            <p>
+                <strong>Ω notation</strong> is estimation where we set a function lesser than <strong><span class="blue">f(n)</span></strong>.
+            </p>
+            <p>
+                <strong>Θ notation</strong> is estimation that in some way sum up <strong>O notation</strong> and <strong>Ω notation</strong>. We setting a function which
+                multiplied by constant <strong>c<sub>1</sub></strong> will be higher or equal <strong><span class="blue">f(n)</span></strong> and multiplied by constant <strong>c<sub>2</sub></strong> will be lesser or equal <strong><span class="blue">f(n)</span></strong>.
+            </p>
         </div>
 
         <div class="slide">
