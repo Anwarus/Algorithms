@@ -127,6 +127,34 @@ span.blue {
     color: #118ab2;
 }
 
+span.yellow {
+    color: #ffd166;
+}
+
+span.green {
+    color: #06d6a0;
+}
+
+span.orange {
+    color: #fa8334;
+}
+
+span.purple {
+    color: #1f0322;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 10px;
+}
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */
