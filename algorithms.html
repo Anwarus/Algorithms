@@ -66,14 +66,14 @@
             </p>
             <pre>
                 <code class="javascript">
-    /*
-     * Problem: bake the cake
-     * Goal: finished cake
-     * Algorithm: recipe for this cake
-     */
+/*
+ * Problem: bake the cake
+ * Goal: finished cake
+ * Algorithm: recipe for this cake
+ */
 
-    // To be honest don't name recipe as algorithm 
-    // unlike you want to catch few strange glances. :)
+// To be honest don't name recipe as algorithm 
+// unlike you want to catch few strange glances. :)
                 </code>
             </pre>
         </div>
@@ -87,15 +87,15 @@
             </p>
             <pre>
                 <code class="javascript">
-    // Raw data: Jack, Jupyter, Sydney
+// Raw data: Jack, Jupyter, Sydney
 
-    // Data structure (custom object):
+// Data structure (custom object):
 
-    const foo = {
-        name: 'Jack',
-        surename: 'Jupyter',
-        city: 'Sydney'
-    }
+const foo = {
+    name: 'Jack',
+    surename: 'Jupyter',
+    city: 'Sydney'
+}
                 </code>
             </pre>
             <p>
@@ -104,27 +104,27 @@
             </p>
             <pre>
                 <code class="javascript">
-    // Data: many of foo's
+// Data: many of foo's
 
-    // Data structure (array):
+// Data structure (array):
 
-    const baz = [
-        {
-            name: 'Jack',
-            surename: 'Jupyter',
-            city: 'Sydney'
-        },
-        {
-            name: 'Nick',
-            surename: 'Seek',
-            city: 'London'
-        },
-        {
-            name: 'Ellie',
-            surename: 'Night',
-            city: 'Paris'
-        }
-    ]
+const baz = [
+    {
+        name: 'Jack',
+        surename: 'Jupyter',
+        city: 'Sydney'
+    },
+    {
+        name: 'Nick',
+        surename: 'Seek',
+        city: 'London'
+    },
+    {
+        name: 'Ellie',
+        surename: 'Night',
+        city: 'Paris'
+    }
+]
                 </code>
             </pre>
         </div>
@@ -143,13 +143,13 @@
             </p>
             <pre>
                 <code class="javascript">
-    function sum(array) {
-        let sum = 0;
-        for (let number of array) {
-            sum += number;
-        }
-        return sum;
+function sum(array) {
+    let sum = 0;
+    for (let number of array) {
+        sum += number;
     }
+    return sum;
+}
                 </code>
             </pre>
             <p>
@@ -257,12 +257,12 @@
             <p>Search for value by iterating through whole array.</p>
             <pre>
                 <code class="javascript">
-    function linearSearch(value, array) {
-        for (let i = 0; i < array.length; i += 1) 
-            if (array[i] === value) return i;
+function linearSearch(value, array) {
+    for (let i = 0; i < array.length; i += 1) 
+        if (array[i] === value) return i;
 
-        return -1;
-    }
+    return -1;
+}
                 </code>
             </pre>
             <p>There is only one <code>for loop</code> so we can easily say that computional complexity of this algorithm equal <strong>O(n)</strong>.</p>
