@@ -11,5 +11,9 @@
   "devDependencies": {
     "chai": "^4.2.0",
     "mocha": "^6.0.2"
+  },
+  "dependencies": {
+    "chart.js": "^2.7.3",
+    "prismjs": "^1.15.0"
   }
 }

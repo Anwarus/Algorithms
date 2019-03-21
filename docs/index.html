@@ -1,0 +1,73 @@
+<!DOCTYPE html><html> <head> <meta charset="utf-8"> <title></title> <meta name="description" content=""> <meta name="viewport" content="width=device-width, initial-scale=1">  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet"> <link rel="stylesheet" href="normalize.6f0b77ac.css"> <link rel="stylesheet" href="main.acfa1699.css"> <link rel="stylesheet" href="navbar.6c847ce4.css"> <link rel="stylesheet" href="prism.68c2d5df.css"> <meta name="theme-color" content="#fafafa"> </head> <body> <!--[if lte IE 9]>
+            <p class="browserupgrade">
+                You are using an <strong>outdated</strong> browser. Please
+                <a href="https://browsehappy.com/">upgrade your browser</a> to improve your
+                experience and security.
+            </p>
+        <![endif]-->  <div class="topnav" id="myTopnav"> <a class="nav-item active" href="#info">Logo</a> <a class="nav-item" href="#algorithm">Algorithms</a> <a class="nav-item" href="#data-structure">Data structures</a> <a class="nav-item" href="#computional-complexity">Computional complexity</a> <a class="nav-item" href="#algorithm-examples">Example algorithms</a> <a class="nav-item" href="#data-structure-examples">Example data structures</a> <a class="nav-item icon" href="javascript:void(0);" onclick="toogle()"> <i class="fa fa-bars"></i> </a> </div> <div id="info" class="slide"> <h1>A word about this site</h1> <p> This site consist of thoughts I gathered from different places during my journey with learning algorithms and data structures. I don't want to create redundant resources but only try to add something new that somebody may find helpful. </p> </div> <div id="algorithm" class="slide"> <h1>What algorithm is</h1> <p> Algorithm is a recipe, a recipe to success, to achieve a predetermined goal. It says us exactly what to do to acomplish task. We got a step by step instruction and our only job is to blindly follow it. </p> <p> First example coming to mind can be recipe for cake. We have a problem which is preparing given deliocius cake. Our end goal is finished cake ready to be absorbed and we are left with recipe how to make it. This recipe is our algorithm. </p> <pre>
+                <code class="language-javascript">
+/*
+ * Problem: bake the cake
+ * Goal: finished cake
+ * Algorithm: recipe for this cake
+ */
+
+// To be honest don't name recipe as algorithm 
+// unlike you want to catch few strange glances. :)
+                </code>
+            </pre> </div> <div id="data-structure" class="slide"> <h1>Time for data structures</h1> <p> Considering data structure we can think of it like a container for raw data. Data structure gives us precise guidelines about method for storing given data. Another interesting fact is that data structures can be nested. </p> <pre>
+                <code class="language-javascript">
+// Raw data: Jack, Jupyter, Sydney
+
+// Data structure (custom object):
+
+const foo = {
+    name: 'Jack',
+    surename: 'Jupyter',
+    city: 'Sydney'
+}
+                </code>
+            </pre> <p> But what if we have hundreds of objects like this, how to store them. Use just another data structure to keep them all. </p> <pre>
+                <code class="language-javascript">
+// Data: many of foo's
+
+// Data structure (array):
+
+const baz = [
+    {
+        name: 'Jack',
+        surename: 'Jupyter',
+        city: 'Sydney'
+    },
+    {
+        name: 'Nick',
+        surename: 'Seek',
+        city: 'London'
+    },
+    {
+        name: 'Ellie',
+        surename: 'Night',
+        city: 'Paris'
+    }
+]
+                </code>
+            </pre> </div> <div id="computional-complexity" class="slide"> <h1>Defining complexity</h1> <p> Computional complexity is universal way to measure performance of algorithms. It allows to focus on real efficiency independent of computer speed. Instead of focusing on measuring time it takes given task to finish we considering sum of operations it need to execute to finish. </p> <p> For example let's take a look on algorithm which will calculate sum of elements in array: </p> <pre>
+                <code class="language-javascript">
+function sum(array) {
+    let sum = 0;
+    for (let number of array) {
+        sum += number;
+    }
+    return sum;
+}
+                </code>
+            </pre> <p> So as we can see every time we will call this function first line <code>let sum = 0;</code> will execute once. Same story regarding last line <code>return sum;</code>. They independly on input always execute once. Things go different inside <code>for loop</code>. Amount of executing of <code>sum += number;</code> depends on array length, it's not constant. Having this information we can come up with function (this time from math) describing complexity of given algorithm. </p> <p> <center><strong>f(n) = n + 2</strong></center> </p> <p> This method let us to precisely designate complexity of algorithm but most of the time we are interested only in estimation. Figuring out exact function sometimes can be a lot harded than in our example but when we only want to study computional complexity there is a easier way. We can just use one of 3 types of estimation notations: </p> <p> <ul> <li>O notation - mostly used</li> <li>Ω (omega) notation</li> <li>Θ (theta) notation</li> </ul> </p> <p> These notations are simplifications of exact function. We can allow ourselves to do that because as function grows there is probably one element which has most influence on end result. For example if we consider: </p> <p> <center><strong>f(n) = n<sup>3</sup> + 5n<sup>2</sup> + 56n + 10</strong></center> </p> <p> And try to check values of each element using big random value of n we can get following result: </p> <p> <table align="center"> <tr> <th>Element</th> <th>Value when n = 1 000</th> </tr> <tr> <td>n<sup>3</sup></td> <td>1 000 000 000</td> </tr> <tr> <td>5n<sup>2</sup></td> <td>5 000 000</td> </tr> <tr> <td>56n</td> <td>56 000</td> </tr> <tr> <td>10</td> <td>10</td> </tr> </table> </p> <p> As we can see as as <strong>n</strong> becomes higher one element has more significant influence on result value. So in case for simplicity we can consider only this element. </p> <img src="complexities.a6074ead.svg"> <p> <center><strong><span class="red">O(n) = 1</span></strong></center> <center><strong><span class="blue">O(n) = n</span></strong></center> <center><strong><span class="yellow">O(n) = log(n)</span></strong></center> <center><strong><span class="green">O(n) = n * log(n)</span></strong></center> <center><strong><span class="orange">O(n) = n<sup>2</sup></span></strong></center> <center><strong><span class="purple">O(n) = 2<sup>n</sup></span></strong></center> </p> <p> The <strong>O notation</strong> imply that there exist function <strong><span class="red">g(n)</span></strong> for with result multipled by some constant <strong>c</strong> will be equal or higher to function <strong><span class="blue">f(n)</span></strong>. This property is fulfilled for every <strong>n</strong> higher than <strong>n<sub>0</sub></strong>. </p> <img src="graph.aecee319.svg"> <p> Above graph shows two function blue one is our <strong><span class="blue">f(n) = n<sup>3</sup> - n + 0.2</span></strong> and red one is <strong><span class="red">g(n) = n<sup>3</sup></span></strong>. As we can see there is a point where these two function intersects, it's <strong>n<sub>0</sub></strong> point. After this point <strong><span class="red">g(n)</span></strong> is always higher than <strong><span class="blue">f(n)</span></strong>. This type of estimation is <strong>O notation</strong>. </p> <p> <strong>Ω notation</strong> is estimation where we set a function lesser than <strong><span class="blue">f(n)</span></strong>. </p> <p> <strong>Θ notation</strong> is estimation that in some way sum up <strong>O notation</strong> and <strong>Ω notation</strong>. We setting a function which multiplied by constant <strong>c<sub>1</sub></strong> will be higher or equal <strong><span class="blue">f(n)</span></strong> and multiplied by constant <strong>c<sub>2</sub></strong> will be lesser or equal <strong><span class="blue">f(n)</span></strong>. </p> </div> <div id="algorithm-examples" class="slide"> <h1>Linear search</h1> <p>Search for value by iterating through whole array.</p> <pre>
+                <code class="language-javascript">
+function linearSearch(value, array) {
+    for (let i = 0; i < array.length; i += 1) 
+        if (array[i] === value) return i;
+
+    return -1;
+}
+                </code>
+            </pre> <p>There is only one <code>for loop</code> so we can easily say that computional complexity of this algorithm equal <strong>O(n)</strong>.</p> </div> <script src="modernizr-3.6.0.min.51f5c18f.js"></script> <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script> <script src="plugins.59a86165.js"></script> <script src="navbar.3f17bccf.js"></script> <script src="prism.df284d68.js"></script> <script>window.jQuery||document.write(' <script src="js/vendor/jquery-3.3.1.min.js"> <\/script>');</script> </body> </html>
