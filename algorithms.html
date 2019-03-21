@@ -32,18 +32,18 @@
 
         <!-- Top Navigation Menu -->
         <div class="topnav" id="myTopnav">
-            <a class="nav-item active" href="#home">Logo</a>
-            <a class="nav-item" href="#news">Algorithms</a>
-            <a class="nav-item" href="#contact">Data structures</a>
-            <a class="nav-item" href="#about">Computional complexity</a>
-            <a class="nav-item" href="#about">Example algorithms</a>
-            <a class="nav-item" href="#about">Example data structures</a>
+            <a class="nav-item active" href="#info">Logo</a>
+            <a class="nav-item" href="#algorithm">Algorithms</a>
+            <a class="nav-item" href="#data-structure">Data structures</a>
+            <a class="nav-item" href="#computional-complexity">Computional complexity</a>
+            <a class="nav-item" href="#algorithm-examples">Example algorithms</a>
+            <a class="nav-item" href="#data-structure-examples">Example data structures</a>
             <a class="nav-item icon" href="javascript:void(0);" onclick="toogle()">
                 <i class="fa fa-bars"></i>
             </a>
         </div>
 
-        <div class="slide">
+        <div id="info" class="slide">
             <h1>A word about this site</h1>
             <p>
                 This site consist of thoughts I gathered from different places during my journey
@@ -52,7 +52,7 @@
             </p>
         </div>
 
-        <div class="slide">
+        <div id="algorithm" class="slide">
             <h1>What algorithm is</h1>
             <p>
                 Algorithm is a recipe, a recipe to success, to achieve a predetermined goal. It says
@@ -78,7 +78,7 @@
             </pre>
         </div>
 
-        <div class="slide">
+        <div id="data-structure" class="slide">
             <h1>Time for data structures</h1>
             <p>
                 Considering data structure we can think of it like a container for raw data. Data
@@ -129,7 +129,7 @@ const baz = [
             </pre>
         </div>
 
-        <div class="slide">
+        <div id="computional-complexity" class="slide">
             <h1>Defining complexity</h1>
             <p>
                 Computional complexity is universal way to measure performance of algorithms. It
@@ -252,7 +252,7 @@ function sum(array) {
             </p>
         </div>
 
-        <div class="slide">
+        <div id="algorithm-examples" class="slide">
             <h1>Linear search</h1>
             <p>Search for value by iterating through whole array.</p>
             <pre>
