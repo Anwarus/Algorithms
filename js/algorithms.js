@@ -1,9 +1,10 @@
-const algorithm = {
-    linearSearch: function linearSearch(value, array) {
+const algorithm = (function algorithm() {
+    const linearSearch = function linearSearch(value, array) {
         for (let i = 0; i < array.length; i += 1) if (array[i] === value) return i;
         return -1;
-    },
-    binarySearch: function binarySearch(value, array) {
+    };
+
+    const binarySearch = function binarySearch(value, array) {
         let lb = 0;
         let ub = array.length - 1;
 
@@ -17,8 +18,9 @@ const algorithm = {
         } while (lb <= ub);
 
         return -1;
-    },
-    interpolationSearch: function interpolationSearch(value, array) {
+    };
+
+    const interpolationSearch = function interpolationSearch(value, array) {
         let lb = 0;
         let ub = array.length - 1;
 
@@ -33,8 +35,9 @@ const algorithm = {
         }
 
         return -1;
-    },
-    bubbleSort: function bubbleSort(array) {
+    };
+
+    const bubbleSort = function bubbleSort(array) {
         const clone = array.slice(0);
         let swapped = true;
 
@@ -52,8 +55,9 @@ const algorithm = {
         }
 
         return clone;
-    },
-    insertionSort: function insertionSort(array) {
+    };
+
+    const insertionSort = function insertionSort(array) {
         const clone = array.slice(0);
 
         for (let i = 1; i < clone.length; i += 1) {
@@ -68,8 +72,9 @@ const algorithm = {
         }
 
         return clone;
-    },
-    selectionSort: function selectionSort(array) {
+    };
+
+    const selectionSort = function selectionSort(array) {
         const clone = array.slice(0);
 
         for (let i = 0; i < clone.length - 1; i += 1) {
@@ -83,7 +88,53 @@ const algorithm = {
         }
 
         return clone;
-    }
-};
+    };
+
+    const mergeSort = function mergeSort(array) {
+        const clone = array.slice(0);
+        const merged = [];
+
+        if (clone.length > 1) {
+            const mid = Math.floor(clone.length / 2);
+            const left = clone.slice(0, mid);
+            const right = clone.slice(mid, clone.length);
+
+            const leftSorted = mergeSort(left);
+            const rightSorted = mergeSort(right);
+
+            let leftIndex = 0;
+            let rightIndex = 0;
+
+            while (true) {
+                if (leftIndex === leftSorted.length && rightIndex === rightSorted.length) break;
+                else if (leftIndex === leftSorted.length) {
+                    merged.push(rightSorted[rightIndex]);
+                    rightIndex += 1;
+                } else if (rightIndex === rightSorted.length) {
+                    merged.push(leftSorted[leftIndex]);
+                    leftIndex += 1;
+                } else if (leftSorted[leftIndex] < rightSorted[rightIndex]) {
+                    merged.push(leftSorted[leftIndex]);
+                    leftIndex += 1;
+                } else {
+                    merged.push(rightSorted[rightIndex]);
+                    rightIndex += 1;
+                }
+            }
+        } else return clone;
+
+        return merged;
+    };
+
+    return {
+        linearSearch,
+        binarySearch,
+        interpolationSearch,
+        bubbleSort,
+        insertionSort,
+        selectionSort,
+        mergeSort
+    };
+})();
 
 module.exports = algorithm;

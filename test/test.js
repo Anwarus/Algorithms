@@ -140,3 +140,20 @@ describe('test selectionSort', function test() {
         expect(array).to.eql(result);
     });
 });
+
+describe('test mergeSort', function test() {
+    it('should return sorted array', function testCase() {
+        const array = [12, 10, 4, 5];
+
+        const result = algorithm.mergeSort(array);
+
+        expect([4, 5, 10, 12]).to.eql(result);
+    });
+    it('should return empty array on empty array given', function testCase() {
+        const array = [];
+
+        const result = algorithm.mergeSort(array);
+
+        expect(array).to.eql(result);
+    });
+});
